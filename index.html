@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cheval</title>
+  <style>
+    html,body,canvas {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body onload="draw()">
+  <canvas id="canvas"></canvas>
+  <script>
+
+function rand_color(){
+  return {
+      r : Math.floor(Math.random()*256),
+      g : Math.floor(Math.random()*256),
+      b : Math.floor(Math.random()*256)
+  }
+}
+
+function color2rgb(c){
+  return "rgb("+c.r+","+c.g+","+c.b+")";
+}
+
+function draw(){
+  var canvas = document.getElementById("canvas");
+  var ctx = canvas.getContext("2d");
+
+  var w = canvas.width;
+  var h = canvas.height;
+
+  var c = rand_color();
+  ctx.fillStyle = color2rgb(c);
+  ctx.fillRect (0,0,w,h);
+}
+</script>
+</body>
+</html>
